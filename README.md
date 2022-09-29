@@ -15,7 +15,7 @@ A tutorial which includes Arboretum &amp; findTransitionGenesets with an example
 
 ### \[Step 0\] About this tutorial
 
-This tutorial explains how to run the ***Arboretum*** and ***findTransitionGeneset***. Arboretum is a multi-task clustering framework which uses hierarchical relationship of samples simultaneously while grouping the genes into a finite number of expression states. In this tutorial, we will do the **clustering of genes** based on the **pseudo-bulk expression** of each sample, i.e. average values of gene expressions within each sample (cell cluster, in single cell setting). Once we have defined these **gene expression states** for all cell clusters, we can identify genes with interesting patterns of expression on the hierarchy and group the genes based on the similarity of their patterns to identify the **differential expressing (DE) genesets**. 
+This tutorial explains how to run the ***Arboretum*** and ***findTransitionGeneset***. Arboretum is a multi-task clustering framework which uses hierarchical relationship of samples simultaneously while grouping the genes into a finite number of expression states. In this tutorial, we will do the **clustering of genes** based on the **pseudo-bulk expression** of each dataset, i.e. average values of gene expressions within each dataset (cell cluster, in single cell setting). Once we have defined these **gene expression states** for all cell clusters, we can identify genes with interesting patterns of expression on the hierarchy and group the genes based on the similarity of their patterns to identify the **differential expressing (DE) genesets**. 
 
 `input_files` folder contains tutorial dataset which consists of following files :
 | Dataset | Description| File name | 
@@ -62,22 +62,20 @@ Anc2 (TAB) left (TAB) Anc1
 c3 (TAB) right (TAB) Anc1
 ```
 
-To deal with a tree easier, especially for a complex tree with many leaves, we can use a program `reformatSpeciesTree` in the `code` folder. This program takes newick-style text file as a input and prints out the tree file for the Arboretum as the output. Usage of the program is like below:
+To deal with a tree easier, especially for a complex tree with many leaves, we can use a program `reformatSpeciesTree` in the `code` folder. This program takes newick-style text file as a input and prints out the tree file for the Arboretum as the output. 
+
+**Running command:**
 ```
+USAGE: reformatSpeciesTree [newick_tree.txt]
 ./code/reformatSpeciesTree input_files/newick_tree.txt > arb_input/tree.txt
 ```
-`input_files/newick_tree.txt` exhibits the newick tree of relationship among 5 sampples in this tutorial. The final input format of tree for Arboretum is `arb_input/tree.txt`.
+`input_files/newick_tree.txt` shows the newick tree of relationship among 5 sampples in this tutorial. The output `arb_input/tree.txt` is a formatted tree for the Arboretum.
 
 ---
 
 ### \[Step 2\] Prepare input order file
 
-This text files is a simple list of sample names WITHOUT Ancestral nodes ("Anc#"). This could be generated based on the tree file above by following command:
-```
-cut -f1 arb_input/input_tree.txt |grep -v Anc > arb_input/orders.txt
-```
-
-`arb_input/orders.txt` is the order file of our 5 samples example dataset which looks like:
+This text files is a simple list of sample names WITHOUT Ancestral nodes ("Anc#") with format like below:
 ```
 c2
 c4
@@ -85,6 +83,12 @@ c3
 c1
 c5
 ```
+
+**Running command:**
+```
+cut -f1 arb_input/input_tree.txt |grep -v Anc > arb_input/orders.txt
+```
+This script used the tree file prepared in the previous step. `arb_input/orders.txt` is the order file of our 5 samples example dataset, an input file of the Arboretum.
 
 ---
 
@@ -99,22 +103,40 @@ OGID (TAB) dataset1_GeneID,dataset2_GeneID,dataset3_GeneID,...
 
 Note that the order of dataset-specific geneID should be same to the order file from [Step 2](#step-2-prepare-input-order-file). Also, from now on, the gene IDs of each dataset is named as "dataset_GeneID" (e.g. c1_AAA).
 
-Following 
-
+**Running command:**
 ```
+USAGE: generating_OGID.sh [orders.txt] [allgenenames.txt]
 sh script/generating_OGID.sh arb_input/orders.txt input_files/allgenenames.txt > arb_input/OGID.txt
 ```
+This script generates OGID based on the order of genes in "allgenenames.txt" file and shapes the gene IDs into "dataset#_geneID" as well as ordering it matched to the order file. The output `arb_input/OGID.txt` is an input file of the Arboretum.
 
 ---
 
 ### \[Step 4\] Prepare input value files
 
+We are using pseudo-bulk expression vector of genes per samples, which is the average values of gene expressions within each dataset matrix so that each dataset has 1 vector values. The format of value file is a tab-delimited text file of 2 columns, the 1st column as "dataset_geneID" and the 2nd column is the mean expression values of all cells within the dataset. 
 ```
+c1_A1BG	(TAB) 0.673579
+c1_A1BG-AS1 (TAB) 0.246118
+c1_A1CF (TAB) 0.000000
+c1_A2M  (TAB) 0.899409
+...
+```
+
+**Running command:**
+```
+USAGE: generating_meanvals.pl [genes-by-cells_matrix.txt] ["dataset-name"]
 perl script/generating_meanvals.pl input_files/c1_matrix.txt c1
 mv c1_meanval.txt arb_input/
 perl script/generating_meanvals.pl input_files/c2_matrix.txt c2
 mv c2_meanval.txt arb_input/
-...
+... (Do tihs for all datset matrices.)
+```
+"arb_input/c#_meanval.txt" files are the values used as the source values for the Arboretum clustering.
+- **Note**: The script expects the matrix text file as a tab-delimited [genes x cells] matrix WITH row and column headers. If the user's dataset has given as [cells x genes], one can transpose it by using "script/transpose_matrix.pl" like:
+```
+USAGE: transpose_matrix.pl [(tab-delimited) matrix.txt]
+perl script/transpose_matrix.pl c1_matrix.txt > c1_matrix_transposed.txt
 ```
 
 ---
