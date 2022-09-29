@@ -5,8 +5,12 @@ A tutorial which includes Arboretum &amp; findTransitionGenesets with an example
 - [1. Prepare input tree](#step-1-prepare-input-tree)
 - [2. Prepare input order](#step-2-prepare-input-order-file)
 - [3. Prepare input value](#step-3-prepare-input-value-files)
-- [4. Run TMF](#step-4-run-tmf)
-- [5. Generate output clusters](#step-5-generate-output-clusters)
+- [4. Initialization clustering / prepare input config](#step-4-do-initialization-clutering-and-prepare-config-file)
+- [5. Run Arboretum](#step-5-run-arboretum)
+- [6. Run findTransitioningGenesets](#step-6-run-findTransitionGenesets)
+- [7. Result visualization](#step-7-visualize-the-results)
+
+---
 
 ### \[Step 0\] About this tutorial
 
@@ -17,7 +21,7 @@ In this tutorial, we are assuming that we wanted to identify differential expres
 - [ ] `code` folder contains the key programs of this procedure. Programs written in C++ are needed to be compiled via "make".
 - [ ] `script` folder contains several shell and perl scripts which help out doing the formatting of the data.
 
-
+---
 
 ### \[Step 1\] Prepare input tree
 
@@ -34,7 +38,7 @@ To deal with a tree easier, especially for a complex tree with many leaves, we c
 ```
 `input_files/newick_tree.txt` exhibits the newick tree of relationship among 5 sampples in this tutorial. The final input format of tree for Arboretum is `arb_input/tree.txt`.
 
-
+---
 
 ### \[Step 2\] Prepare input order file
 
@@ -44,38 +48,49 @@ cut -f1 arb_input/input_tree.txt |grep -v Anc > arb_input/orders.txt
 ```
 `arb_input/orders.txt` shows how the order file looks.
 
-
+---
 
 ### \[Step 3\] Prepare input value files
 
-
-
-### \[Step 4\] Run TMF
-
-
-### \[Step 5\] Generate output clusters
-
-
-See [Parameters](#parameters) for more details.
 ```
-./run_tmf input/tree/toy_tree.txt 120 2 -o output/ -a 10 -l 200
+perl script/generating_meanvals.pl input_files/c1_matrix.txt c1
+mv c1_meanval.txt arb_input/
+perl script/generating_meanvals.pl input_files/c2_matrix.txt c2
+mv c2_meanval.txt arb_input/
+...
 ```
-- `input/toy_tree.txt` specifies the tree file, which contains file locations to individual task matrices (paths are relative to location of run_tmf executable location). 
-- `120` is the number of features/columns in each task matrix, which has to be be the same across all tasks. 
-- `2` = k, the smaller dimensions of U and V. 
--	[Optional] `-o output/` will put all output files to output/ directory. Check out the example output directory in the repo. By default output will be saved to current directory.
--	[Optional] `-a 10` will set the alpha (strength of regularization to parent node) to be 10. Default is alpha = 10.
-- [Optional] `-l 200` will set lambda (strength of sparsity constraint) to be 200. By default there is no sparsity constraint, i.e., lambda = 0.
 
-#### Input tree file format
-See example in input/toy_tree.txt.
+---
+
+### \[Step 4\] Do initialization clutering and prepare config file
+
 ```
-1 3 A input/toy/A.txt 95
-2 3 B input/toy/B.txt 80
-3 -1 root N/A N/A
+sh step1_run_GMM_and_prep_config.sh 3 arb_input/orders.txt 5
 ```
-- Column 1: **node ID**; start from 1 and move up.
-- Column 2: **parent node ID**; right now the implementation will only work correctly if you ID all children nodes before a parent node (so start from the lowest depth of tree, move to next level, till you hit the root, which should be the last node ID.)
-- Column 3: **node alias**, used as prefix to U and V output files.
-- Column 4: **location of input matrix file for leaf nodes**, relative to where the `run_tmf` executable is. Set as N/A for non-leaf nodes.
-- Column 5: **number of rows/data points in each input matrix**. Set as N/A for non-leaf nodes.
+
+
+---
+
+### \[Step 5\] Run Arboretum
+
+```
+sh step2_run_arboretum.sh 3 arb_input/orders.txt arb_input/OGID.txt arb_input/input_tree.txt arb_input/config.txt c1 arb_output/
+```
+
+---
+
+### \[Step 6\] Run findTransitionGeneset
+
+```
+sh step3_run_findTransitionGenesets.sh arb_output/ arb_input/orders.txt arb_input/OGID.txt c1 transition_genesets_output
+
+```
+
+---
+
+### \[Step 7\] Visualize the results
+
+```
+sh script/draw_heatmap.sh transition_genesets_output/ordered_clusterset_means.txt 3 2
+sh script/draw_heatmap.sh transition_genesets_output/clusterset101.txt 3 2
+```
