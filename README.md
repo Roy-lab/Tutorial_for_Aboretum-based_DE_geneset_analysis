@@ -17,7 +17,7 @@ A tutorial which includes Arboretum &amp; findTransitionGenesets with an example
 This tutorial explains how to run the ***Arboretum*** and ***findTransitionGeneset*** based on the result from Arboretum. Arboretum was originally developed for the gene exprssion analysis of multiple species, but the multi-task framework could be also used in other types of comparative analysis including comparative network anslsys or analysis of different cell groups.<br>
 In this tutorial, we are assuming that we wanted to identify differential expressing geneset which exhibits complex patterns across multiple samples. Before going into the procedure, Please check the following initial files are correctly existing.
 
-- [ ] `input_files` folder contains 5 different data matrices (`c1_datamat.txt`, ... , `c5_datamat.txt`) where the cells are different but the genes are common acorss all samples. Also, there is a file for tree relationship written as newick format (`newick.txt`).
+- [ ] `input_files` folder contains 5 different data matrices (`c1_matrix.txt`, ... , `c5_matrix.txt`) where the cells are different but the genes are common acorss all samples. Also, there is a file for tree relationship written as newick format (`newick.txt`).
 - [ ] `code` folder contains the key programs of this procedure. Programs written in C++ are needed to be compiled via "make".
 - [ ] `script` folder contains several shell and perl scripts which help out doing the formatting of the data.
 
