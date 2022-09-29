@@ -6,7 +6,7 @@ A tutorial which includes Arboretum &amp; findTransitionGenesets with an example
 - [2. Prepare input order](#step-2-prepare-input-order-file)
 - [3. Prepare input OGID](#step-3-prepare-input-OGID-file)
 - [4. Prepare input value](#step-4-prepare-input-value-files)
-- [5. Initialization clustering / prepare input config](#step-5-do-initialization-clutering-and-prepare-config-file)
+- [5. Run initialization clustering / prepare input config](#step-5-run-initialization-clutering-and-prepare-config-file)
 - [6. Run Arboretum](#step-6-run-arboretum)
 - [7. Run findTransitioningGenesets](#step-7-run-findTransitionGenesets)
 - [8. Result visualization](#step-8-visualize-the-results)
@@ -36,6 +36,7 @@ This tutorial explains how to run the ***Arboretum*** and ***findTransitionGenes
 | learnMoE | Initialization GMM clustering | https://github.com/Roy-lab/learnMoE |
 | Arboretum | Multi-task gene clustering | https://github.com/Roy-lab/Arboretum2.0 |
 | findTransitionGenesets | Hierarchical clustering of patterns identified from Arboretum | https://github.com/Roy-lab/clade-specific_gene_sets |
+| reformatSpeciesTree | Format newick tree to Arboretum input | - |
 
 - **Note**: All programs are written in C++ and the compling could be fulfilled by "Makefile" in each directory with the "make" command:
 
@@ -45,7 +46,7 @@ This tutorial explains how to run the ***Arboretum*** and ***findTransitionGenes
 The key steps of clustering are performed by the following wrapper scripts:
 | Wrapper script name | Running program | Output |
 | :---    | :---  | :--- |
-| step1_run_GMM_and_prep_config.sh | learnMoE | arb_input/merged_gmm_k#/, arb_input/config_K#.txt |
+| step1_run_GMM_and_prep_config.sh | learnMoE | arb_input/merged_gmm_k#/, arb_input/config_k#.txt |
 | step2_run_arboretum.sh | Arboretum | arb_output/ |
 | step3_run_findTransitionGenesets.sh | findTransitionGenesets | transition_genesets_output/ |
 
@@ -60,6 +61,7 @@ c2 (TAB) right (TAB) Anc2
 Anc2 (TAB) left (TAB) Anc1
 c3 (TAB) right (TAB) Anc1
 ```
+
 To deal with a tree easier, especially for a complex tree with many leaves, we can use a program `reformatSpeciesTree` in the `code` folder. This program takes newick-style text file as a input and prints out the tree file for the Arboretum as the output. Usage of the program is like below:
 ```
 ./code/reformatSpeciesTree input_files/newick_tree.txt > arb_input/tree.txt
@@ -70,10 +72,11 @@ To deal with a tree easier, especially for a complex tree with many leaves, we c
 
 ### \[Step 2\] Prepare input order file
 
-This text files is a simple list of sample names WITHOUT Ancestral nodes ("AncX"). This could be generated based on the tree file above by following command:
+This text files is a simple list of sample names WITHOUT Ancestral nodes ("Anc#"). This could be generated based on the tree file above by following command:
 ```
 cut -f1 arb_input/input_tree.txt |grep -v Anc > arb_input/orders.txt
 ```
+
 `arb_input/orders.txt` is the order file of our 5 samples example dataset which looks like:
 ```
 c2
@@ -86,6 +89,17 @@ c5
 ---
 
 ### \[Step 3\] Prepare input OGID file
+
+OGID stands for "OrthoGroup ID" and it is a list of orthogroups(OGs) with a profiled list of corresponding gene IDs per species (wihch is a legacy of the original Arboretum). Regardless of the its naming, this file is used for the mapping of genes' identities from different datasets.
+The format of this file is 
+```
+OGID (TAB) dataset1_GeneID,dataset2_GeneID,dataset3_GeneID,... 
+```
+(tab delimited between OGID and gene IDs, comma delimited among genes)
+
+Note that the order of dataset-specific geneID should be same to the order file from [Step 2](#step-2-prepare-input-order-file). Also, from now on, the gene IDs of each dataset is named as "dataset_GeneID" (e.g. c1_AAA).
+
+Following 
 
 ```
 sh script/generating_OGID.sh arb_input/orders.txt input_files/allgenenames.txt > arb_input/OGID.txt
@@ -105,7 +119,7 @@ mv c2_meanval.txt arb_input/
 
 ---
 
-### \[Step 5\] Do initialization clutering and prepare config file
+### \[Step 5\] Run initialization clutering and prepare config file
 
 ```
 sh step1_run_GMM_and_prep_config.sh 3 arb_input/orders.txt 5
