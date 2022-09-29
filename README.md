@@ -15,12 +15,39 @@ A tutorial which includes Arboretum &amp; findTransitionGenesets with an example
 
 ### \[Step 0\] About this tutorial
 
-This tutorial explains how to run the ***Arboretum*** and ***findTransitionGeneset*** based on the result from Arboretum. Arboretum was originally developed for the gene exprssion analysis of multiple species, but the multi-task framework could be also used in other types of comparative analysis including comparative network anslsys or analysis of different cell groups.<br>
-In this tutorial, we are assuming that we wanted to identify "**differential expressing (DE) genesets**" which exhibit complex patterns across multiple samples. Before going into the procedure, please check the following initial files.
+This tutorial explains how to run the ***Arboretum*** and ***findTransitionGeneset***. Arboretum is a multi-task clustering framework which uses hierarchical relationship of samples simultaneously while grouping the genes into a finite number of expression states. In this tutorial, we will do the **clustering of genes** based on the **pseudo-bulk expression** of each sample, i.e. average values of gene expressions within each sample (cell cluster, in single cell setting). Once we have defined these **gene expression states** for all cell clusters, we can identify genes with interesting patterns of expression on the hierarchy and group the genes based on the similarity of their patterns to identify the **differential expressing (DE) genesets**. 
 
-- [ ] `input_files` folder contains 5 different data matrices (`c1_matrix.txt`, ... , `c5_matrix.txt`) where the cells are different but the genes are common acorss all samples. Also, there is a file for tree relationship written as newick format (`newick.txt`).
-- [ ] `code` folder contains the key programs of this procedure. Programs written in C++ are needed to be compiled via "make".
-- [ ] `script` folder contains several shell and perl scripts which help out doing the formatting of the data.
+`input_files` folder contains tutorial dataset which consists of following files :
+| Dataset | Description| File name | 
+| :---    | :---  | :--- |
+| c1_matrix | 155 cells x 20840 genes, with row & column headers | input_files/c1_matrix.txt |
+| c2_matrix | 166 cells x 20840 genes, with row & column headers | input_files/c2_matrix.txt |
+| c3_matrix | 126 cells x 20840 genes, with row & column headers | input_files/c3_matrix.txt |
+| c4_matrix | 265 cells x 20840 genes, with row & column headers | input_files/c4_matrix.txt |
+| c5_matrix | 155 cells x 20840 genes, with row & column headers | input_files/c5_matrix.txt |
+| Gene ID | Gene names of 20840 genes | input_files/allgenenames.txt |
+| Tree | [newick format](https://evolution.genetics.washington.edu/phylip/newicktree.html) tree text | input_files/newick_tree.txt 
+
+- **Note**: the codes and scripts of this tutorial were fully tested and checked as working with the format above. So please firslty prepare your data as like above if you want to work with your own data.
+
+`code` folder contains the main programs of this tutorial, which could be also downloaded from its own site:
+| Program | Description | Original site |
+| :---    | :---  | :--- |
+| learnMoE | Initialization GMM clustering | https://github.com/Roy-lab/learnMoE |
+| Arboretum | Multi-task gene clustering | https://github.com/Roy-lab/Arboretum2.0 |
+| findTransitionGenesets | Hierarchical clustering of patterns identified from Arboretum | https://github.com/Roy-lab/clade-specific_gene_sets |
+
+- **Note**: All programs are written in C++ and the compling could be fulfilled by "Makefile" in each directory with the "make" command:
+
+
+`script` folder contains several shell and PERL scripts which is used for the specific formatting of the data while running the wrapper scripts.
+
+The key steps of clustering are performed by the following wrapper scripts:
+| Wrapper script name | Running program | Output |
+| :---    | :---  | :--- |
+| step1_run_GMM_and_prep_config.sh | learnMoE | arb_input/merged_gmm_k#/, arb_input/config_K#.txt |
+| step2_run_arboretum.sh | Arboretum | arb_output/ |
+| step3_run_findTransitionGenesets.sh | findTransitionGenesets | transition_genesets_output/ |
 
 ---
 
@@ -95,7 +122,7 @@ sh step2_run_arboretum.sh 3 arb_input/orders.txt arb_input/OGID.txt arb_input/in
 
 ---
 
-### \[Step 7\] Run findTransitionGeneset
+### \[Step 7\] Run findTransitionGenesets
 
 ```
 sh step3_run_findTransitionGenesets.sh arb_output/ arb_input/orders.txt arb_input/OGID.txt c1 transition_genesets_output
