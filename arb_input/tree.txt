@@ -1,0 +1,8 @@
+Anc2	left	Anc1
+Anc4	right	Anc1
+c2	left	Anc2
+Anc3	right	Anc2
+c4	left	Anc3
+c3	right	Anc3
+c1	left	Anc4
+c5	right	Anc4

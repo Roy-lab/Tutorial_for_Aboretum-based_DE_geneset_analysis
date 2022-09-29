@@ -1,0 +1,8 @@
+MotifRegressor.C
+sprintf(outputFName,"%s/likelihood.txt",outputDir);
+ofstream llFile(outputFName);
+for(map<int,double>::iterator tIter=holdoutLL.begin();tIter!=holdoutLL.end();tIter++)
+{
+	llFile << trainLL[tIter->first] <<"\t" << tIter->second << "\t" << holdout_unpenLL[tIter->first] << endl;
+}
+llFile.close();

@@ -1,0 +1,140 @@
+c1_AHRR||6	c2||8	2|1|2
+c1_AHRR||6	c4||8	3|1|3
+c1_AHRR||6	c3||8	3|1|3
+c1_AHRR||6	Anc3||8	3|1|3
+c1_AHRR||6	Anc2||8	2|1|2
+c1_AHRR||6	c1||8	2|1|2
+c1_AHRR||6	c5||8	2|1|2
+c1_AHRR||6	Anc4||8	2|1|2
+c1_AHRR||6	Anc1||8	2|1|2
+|- MyVspacer1|Spacer
+c1_AHRR||6	c2_Exp0||6	0.402524|2
+|- cellmarkerVspacer1|Spacer
+c1_AHRR||6	c4_Exp0||6	1.25409|2
+|- cellmarkerVspacer2|Spacer
+c1_AHRR||6	c3_Exp0||6	1.78543|2
+|- cellmarkerVspacer3|Spacer
+c1_AHRR||6	c1_Exp0||6	0.378079|2
+|- cellmarkerVspacer6|Spacer
+c1_AHRR||6	c5_Exp0||6	0.634615|2
+|- cellmarkerVspacer7|Spacer
+c1_SERINC2||6	c2||8	2|1|2
+c1_SERINC2||6	c4||8	3|1|3
+c1_SERINC2||6	c3||8	3|1|3
+c1_SERINC2||6	Anc3||8	3|1|3
+c1_SERINC2||6	Anc2||8	2|1|2
+c1_SERINC2||6	c1||8	2|1|2
+c1_SERINC2||6	c5||8	2|1|2
+c1_SERINC2||6	Anc4||8	2|1|2
+c1_SERINC2||6	Anc1||8	2|1|2
+|- MyVspacer1|Spacer
+c1_SERINC2||6	c2_Exp0||6	0.536083|2
+|- cellmarkerVspacer1|Spacer
+c1_SERINC2||6	c4_Exp0||6	0.86612|2
+|- cellmarkerVspacer2|Spacer
+c1_SERINC2||6	c3_Exp0||6	1.20161|2
+|- cellmarkerVspacer3|Spacer
+c1_SERINC2||6	c1_Exp0||6	0.945423|2
+|- cellmarkerVspacer6|Spacer
+c1_SERINC2||6	c5_Exp0||6	0.453784|2
+|- cellmarkerVspacer7|Spacer
+c1_RORB||6	c2||8	2|1|2
+c1_RORB||6	c4||8	3|1|3
+c1_RORB||6	c3||8	3|1|3
+c1_RORB||6	Anc3||8	3|1|3
+c1_RORB||6	Anc2||8	2|1|2
+c1_RORB||6	c1||8	2|1|2
+c1_RORB||6	c5||8	2|1|2
+c1_RORB||6	Anc4||8	2|1|2
+c1_RORB||6	Anc1||8	2|1|2
+|- MyVspacer1|Spacer
+c1_RORB||6	c2_Exp0||6	0.490639|2
+|- cellmarkerVspacer1|Spacer
+c1_RORB||6	c4_Exp0||6	1.31695|2
+|- cellmarkerVspacer2|Spacer
+c1_RORB||6	c3_Exp0||6	1.79041|2
+|- cellmarkerVspacer3|Spacer
+c1_RORB||6	c1_Exp0||6	0.540371|2
+|- cellmarkerVspacer6|Spacer
+c1_RORB||6	c5_Exp0||6	0.386434|2
+|- cellmarkerVspacer7|Spacer
+c1_MIR4435-2HG||6	c2||8	2|1|2
+c1_MIR4435-2HG||6	c4||8	3|1|3
+c1_MIR4435-2HG||6	c3||8	3|1|3
+c1_MIR4435-2HG||6	Anc3||8	3|1|3
+c1_MIR4435-2HG||6	Anc2||8	2|1|2
+c1_MIR4435-2HG||6	c1||8	2|1|2
+c1_MIR4435-2HG||6	c5||8	2|1|2
+c1_MIR4435-2HG||6	Anc4||8	2|1|2
+c1_MIR4435-2HG||6	Anc1||8	2|1|2
+|- MyVspacer1|Spacer
+c1_MIR4435-2HG||6	c2_Exp0||6	0.550585|2
+|- cellmarkerVspacer1|Spacer
+c1_MIR4435-2HG||6	c4_Exp0||6	0.639194|2
+|- cellmarkerVspacer2|Spacer
+c1_MIR4435-2HG||6	c3_Exp0||6	1.40061|2
+|- cellmarkerVspacer3|Spacer
+c1_MIR4435-2HG||6	c1_Exp0||6	0.989173|2
+|- cellmarkerVspacer6|Spacer
+c1_MIR4435-2HG||6	c5_Exp0||6	0.840614|2
+|- cellmarkerVspacer7|Spacer
+c1_MYH14||6	c2||8	2|1|2
+c1_MYH14||6	c4||8	3|1|3
+c1_MYH14||6	c3||8	3|1|3
+c1_MYH14||6	Anc3||8	3|1|3
+c1_MYH14||6	Anc2||8	2|1|2
+c1_MYH14||6	c1||8	2|1|2
+c1_MYH14||6	c5||8	2|1|2
+c1_MYH14||6	Anc4||8	2|1|2
+c1_MYH14||6	Anc1||8	2|1|2
+|- MyVspacer1|Spacer
+c1_MYH14||6	c2_Exp0||6	0.515043|2
+|- cellmarkerVspacer1|Spacer
+c1_MYH14||6	c4_Exp0||6	1.16184|2
+|- cellmarkerVspacer2|Spacer
+c1_MYH14||6	c3_Exp0||6	0.913339|2
+|- cellmarkerVspacer3|Spacer
+c1_MYH14||6	c1_Exp0||6	0.161036|2
+|- cellmarkerVspacer6|Spacer
+c1_MYH14||6	c5_Exp0||6	0.218745|2
+|- cellmarkerVspacer7|Spacer
+c1_NACA||6	c2||8	2|1|2
+c1_NACA||6	c4||8	3|1|3
+c1_NACA||6	c3||8	3|1|3
+c1_NACA||6	Anc3||8	3|1|3
+c1_NACA||6	Anc2||8	2|1|2
+c1_NACA||6	c1||8	2|1|2
+c1_NACA||6	c5||8	2|1|2
+c1_NACA||6	Anc4||8	2|1|2
+c1_NACA||6	Anc1||8	2|1|2
+|- MyVspacer1|Spacer
+c1_NACA||6	c2_Exp0||6	0.499021|2
+|- cellmarkerVspacer1|Spacer
+c1_NACA||6	c4_Exp0||6	1.46992|2
+|- cellmarkerVspacer2|Spacer
+c1_NACA||6	c3_Exp0||6	0.81394|2
+|- cellmarkerVspacer3|Spacer
+c1_NACA||6	c1_Exp0||6	0.371554|2
+|- cellmarkerVspacer6|Spacer
+c1_NACA||6	c5_Exp0||6	0.553421|2
+|- cellmarkerVspacer7|Spacer
+c1_PRR5L||6	c2||8	2|1|2
+c1_PRR5L||6	c4||8	3|1|3
+c1_PRR5L||6	c3||8	3|1|3
+c1_PRR5L||6	Anc3||8	3|1|3
+c1_PRR5L||6	Anc2||8	2|1|2
+c1_PRR5L||6	c1||8	2|1|2
+c1_PRR5L||6	c5||8	2|1|2
+c1_PRR5L||6	Anc4||8	2|1|2
+c1_PRR5L||6	Anc1||8	2|1|2
+|- MyVspacer1|Spacer
+c1_PRR5L||6	c2_Exp0||6	0.817831|2
+|- cellmarkerVspacer1|Spacer
+c1_PRR5L||6	c4_Exp0||6	0.744315|2
+|- cellmarkerVspacer2|Spacer
+c1_PRR5L||6	c3_Exp0||6	1.32449|2
+|- cellmarkerVspacer3|Spacer
+c1_PRR5L||6	c1_Exp0||6	0.648704|2
+|- cellmarkerVspacer6|Spacer
+c1_PRR5L||6	c5_Exp0||6	0.74665|2
+|- cellmarkerVspacer7|Spacer

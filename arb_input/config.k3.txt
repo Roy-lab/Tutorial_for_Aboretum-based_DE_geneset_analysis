@@ -1,0 +1,5 @@
+c2	arb_input//merged_gmm_k3/c2_initclust.txt	arb_input//c2_meanval.txt
+c4	arb_input//merged_gmm_k3/c4_initclust.txt	arb_input//c4_meanval.txt
+c3	arb_input//merged_gmm_k3/c3_initclust.txt	arb_input//c3_meanval.txt
+c1	arb_input//merged_gmm_k3/c1_initclust.txt	arb_input//c1_meanval.txt
+c5	arb_input//merged_gmm_k3/c5_initclust.txt	arb_input//c5_meanval.txt

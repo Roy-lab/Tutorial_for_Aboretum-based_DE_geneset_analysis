@@ -1,0 +1,380 @@
+c1_ARHGEF39||6	c2||8	1|1|1
+c1_ARHGEF39||6	c4||8	1|1|1
+c1_ARHGEF39||6	c3||8	1|1|1
+c1_ARHGEF39||6	Anc3||8	1|1|1
+c1_ARHGEF39||6	Anc2||8	1|1|1
+c1_ARHGEF39||6	c1||8	2|1|2
+c1_ARHGEF39||6	c5||8	3|1|3
+c1_ARHGEF39||6	Anc4||8	3|1|3
+c1_ARHGEF39||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_ARHGEF39||6	c2_Exp0||6	0.120635|2
+|- cellmarkerVspacer1|Spacer
+c1_ARHGEF39||6	c4_Exp0||6	0.112297|2
+|- cellmarkerVspacer2|Spacer
+c1_ARHGEF39||6	c3_Exp0||6	0.071215|2
+|- cellmarkerVspacer3|Spacer
+c1_ARHGEF39||6	c1_Exp0||6	0.561753|2
+|- cellmarkerVspacer6|Spacer
+c1_ARHGEF39||6	c5_Exp0||6	1.28502|2
+|- cellmarkerVspacer7|Spacer
+c1_C18orf54||6	c2||8	1|1|1
+c1_C18orf54||6	c4||8	1|1|1
+c1_C18orf54||6	c3||8	1|1|1
+c1_C18orf54||6	Anc3||8	1|1|1
+c1_C18orf54||6	Anc2||8	1|1|1
+c1_C18orf54||6	c1||8	2|1|2
+c1_C18orf54||6	c5||8	3|1|3
+c1_C18orf54||6	Anc4||8	3|1|3
+c1_C18orf54||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_C18orf54||6	c2_Exp0||6	0.223867|2
+|- cellmarkerVspacer1|Spacer
+c1_C18orf54||6	c4_Exp0||6	0.067223|2
+|- cellmarkerVspacer2|Spacer
+c1_C18orf54||6	c3_Exp0||6	0.069776|2
+|- cellmarkerVspacer3|Spacer
+c1_C18orf54||6	c1_Exp0||6	0.494127|2
+|- cellmarkerVspacer6|Spacer
+c1_C18orf54||6	c5_Exp0||6	1.45881|2
+|- cellmarkerVspacer7|Spacer
+c1_NRGN||6	c2||8	1|1|1
+c1_NRGN||6	c4||8	1|1|1
+c1_NRGN||6	c3||8	1|1|1
+c1_NRGN||6	Anc3||8	1|1|1
+c1_NRGN||6	Anc2||8	1|1|1
+c1_NRGN||6	c1||8	2|1|2
+c1_NRGN||6	c5||8	3|1|3
+c1_NRGN||6	Anc4||8	3|1|3
+c1_NRGN||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_NRGN||6	c2_Exp0||6	0.201811|2
+|- cellmarkerVspacer1|Spacer
+c1_NRGN||6	c4_Exp0||6	0.134802|2
+|- cellmarkerVspacer2|Spacer
+c1_NRGN||6	c3_Exp0||6	0.095941|2
+|- cellmarkerVspacer3|Spacer
+c1_NRGN||6	c1_Exp0||6	0.441534|2
+|- cellmarkerVspacer6|Spacer
+c1_NRGN||6	c5_Exp0||6	2.09035|2
+|- cellmarkerVspacer7|Spacer
+c1_HIST1H3F||6	c2||8	1|1|1
+c1_HIST1H3F||6	c4||8	1|1|1
+c1_HIST1H3F||6	c3||8	1|1|1
+c1_HIST1H3F||6	Anc3||8	1|1|1
+c1_HIST1H3F||6	Anc2||8	1|1|1
+c1_HIST1H3F||6	c1||8	2|1|2
+c1_HIST1H3F||6	c5||8	3|1|3
+c1_HIST1H3F||6	Anc4||8	3|1|3
+c1_HIST1H3F||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_HIST1H3F||6	c2_Exp0||6	0.246025|2
+|- cellmarkerVspacer1|Spacer
+c1_HIST1H3F||6	c4_Exp0||6	0|2
+|- cellmarkerVspacer2|Spacer
+c1_HIST1H3F||6	c3_Exp0||6	0|2
+|- cellmarkerVspacer3|Spacer
+c1_HIST1H3F||6	c1_Exp0||6	0.641541|2
+|- cellmarkerVspacer6|Spacer
+c1_HIST1H3F||6	c5_Exp0||6	1.58533|2
+|- cellmarkerVspacer7|Spacer
+c1_ART5||6	c2||8	1|1|1
+c1_ART5||6	c4||8	1|1|1
+c1_ART5||6	c3||8	1|1|1
+c1_ART5||6	Anc3||8	1|1|1
+c1_ART5||6	Anc2||8	1|1|1
+c1_ART5||6	c1||8	2|1|2
+c1_ART5||6	c5||8	3|1|3
+c1_ART5||6	Anc4||8	3|1|3
+c1_ART5||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_ART5||6	c2_Exp0||6	0.038266|2
+|- cellmarkerVspacer1|Spacer
+c1_ART5||6	c4_Exp0||6	0.197571|2
+|- cellmarkerVspacer2|Spacer
+c1_ART5||6	c3_Exp0||6	0.139743|2
+|- cellmarkerVspacer3|Spacer
+c1_ART5||6	c1_Exp0||6	0.631159|2
+|- cellmarkerVspacer6|Spacer
+c1_ART5||6	c5_Exp0||6	1.32838|2
+|- cellmarkerVspacer7|Spacer
+c1_TCF19||6	c2||8	1|1|1
+c1_TCF19||6	c4||8	1|1|1
+c1_TCF19||6	c3||8	1|1|1
+c1_TCF19||6	Anc3||8	1|1|1
+c1_TCF19||6	Anc2||8	1|1|1
+c1_TCF19||6	c1||8	2|1|2
+c1_TCF19||6	c5||8	3|1|3
+c1_TCF19||6	Anc4||8	3|1|3
+c1_TCF19||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_TCF19||6	c2_Exp0||6	0.272442|2
+|- cellmarkerVspacer1|Spacer
+c1_TCF19||6	c4_Exp0||6	0.099089|2
+|- cellmarkerVspacer2|Spacer
+c1_TCF19||6	c3_Exp0||6	0.122811|2
+|- cellmarkerVspacer3|Spacer
+c1_TCF19||6	c1_Exp0||6	0.437091|2
+|- cellmarkerVspacer6|Spacer
+c1_TCF19||6	c5_Exp0||6	2.76552|2
+|- cellmarkerVspacer7|Spacer
+c1_CHAF1B||6	c2||8	1|1|1
+c1_CHAF1B||6	c4||8	1|1|1
+c1_CHAF1B||6	c3||8	1|1|1
+c1_CHAF1B||6	Anc3||8	1|1|1
+c1_CHAF1B||6	Anc2||8	1|1|1
+c1_CHAF1B||6	c1||8	2|1|2
+c1_CHAF1B||6	c5||8	3|1|3
+c1_CHAF1B||6	Anc4||8	3|1|3
+c1_CHAF1B||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_CHAF1B||6	c2_Exp0||6	0.278429|2
+|- cellmarkerVspacer1|Spacer
+c1_CHAF1B||6	c4_Exp0||6	0.150417|2
+|- cellmarkerVspacer2|Spacer
+c1_CHAF1B||6	c3_Exp0||6	0.118132|2
+|- cellmarkerVspacer3|Spacer
+c1_CHAF1B||6	c1_Exp0||6	0.539518|2
+|- cellmarkerVspacer6|Spacer
+c1_CHAF1B||6	c5_Exp0||6	1.90575|2
+|- cellmarkerVspacer7|Spacer
+c1_RAD54B||6	c2||8	1|1|1
+c1_RAD54B||6	c4||8	1|1|1
+c1_RAD54B||6	c3||8	1|1|1
+c1_RAD54B||6	Anc3||8	1|1|1
+c1_RAD54B||6	Anc2||8	1|1|1
+c1_RAD54B||6	c1||8	2|1|2
+c1_RAD54B||6	c5||8	3|1|3
+c1_RAD54B||6	Anc4||8	3|1|3
+c1_RAD54B||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_RAD54B||6	c2_Exp0||6	0.25826|2
+|- cellmarkerVspacer1|Spacer
+c1_RAD54B||6	c4_Exp0||6	0.119687|2
+|- cellmarkerVspacer2|Spacer
+c1_RAD54B||6	c3_Exp0||6	0.088571|2
+|- cellmarkerVspacer3|Spacer
+c1_RAD54B||6	c1_Exp0||6	0.654364|2
+|- cellmarkerVspacer6|Spacer
+c1_RAD54B||6	c5_Exp0||6	1.90778|2
+|- cellmarkerVspacer7|Spacer
+c1_CENPI||6	c2||8	1|1|1
+c1_CENPI||6	c4||8	1|1|1
+c1_CENPI||6	c3||8	1|1|1
+c1_CENPI||6	Anc3||8	1|1|1
+c1_CENPI||6	Anc2||8	1|1|1
+c1_CENPI||6	c1||8	2|1|2
+c1_CENPI||6	c5||8	3|1|3
+c1_CENPI||6	Anc4||8	3|1|3
+c1_CENPI||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_CENPI||6	c2_Exp0||6	0.205345|2
+|- cellmarkerVspacer1|Spacer
+c1_CENPI||6	c4_Exp0||6	0.132244|2
+|- cellmarkerVspacer2|Spacer
+c1_CENPI||6	c3_Exp0||6	0.047724|2
+|- cellmarkerVspacer3|Spacer
+c1_CENPI||6	c1_Exp0||6	0.413533|2
+|- cellmarkerVspacer6|Spacer
+c1_CENPI||6	c5_Exp0||6	2.61863|2
+|- cellmarkerVspacer7|Spacer
+c1_PRC1||6	c2||8	1|1|1
+c1_PRC1||6	c4||8	1|1|1
+c1_PRC1||6	c3||8	1|1|1
+c1_PRC1||6	Anc3||8	1|1|1
+c1_PRC1||6	Anc2||8	1|1|1
+c1_PRC1||6	c1||8	2|1|2
+c1_PRC1||6	c5||8	3|1|3
+c1_PRC1||6	Anc4||8	3|1|3
+c1_PRC1||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_PRC1||6	c2_Exp0||6	0.142241|2
+|- cellmarkerVspacer1|Spacer
+c1_PRC1||6	c4_Exp0||6	0.089743|2
+|- cellmarkerVspacer2|Spacer
+c1_PRC1||6	c3_Exp0||6	0.02073|2
+|- cellmarkerVspacer3|Spacer
+c1_PRC1||6	c1_Exp0||6	0.45277|2
+|- cellmarkerVspacer6|Spacer
+c1_PRC1||6	c5_Exp0||6	1.96768|2
+|- cellmarkerVspacer7|Spacer
+c1_CENPE||6	c2||8	1|1|1
+c1_CENPE||6	c4||8	1|1|1
+c1_CENPE||6	c3||8	1|1|1
+c1_CENPE||6	Anc3||8	1|1|1
+c1_CENPE||6	Anc2||8	1|1|1
+c1_CENPE||6	c1||8	2|1|2
+c1_CENPE||6	c5||8	3|1|3
+c1_CENPE||6	Anc4||8	3|1|3
+c1_CENPE||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_CENPE||6	c2_Exp0||6	0.15018|2
+|- cellmarkerVspacer1|Spacer
+c1_CENPE||6	c4_Exp0||6	0.072347|2
+|- cellmarkerVspacer2|Spacer
+c1_CENPE||6	c3_Exp0||6	0.101326|2
+|- cellmarkerVspacer3|Spacer
+c1_CENPE||6	c1_Exp0||6	0.573147|2
+|- cellmarkerVspacer6|Spacer
+c1_CENPE||6	c5_Exp0||6	1.61709|2
+|- cellmarkerVspacer7|Spacer
+c1_PRR11||6	c2||8	1|1|1
+c1_PRR11||6	c4||8	1|1|1
+c1_PRR11||6	c3||8	1|1|1
+c1_PRR11||6	Anc3||8	1|1|1
+c1_PRR11||6	Anc2||8	1|1|1
+c1_PRR11||6	c1||8	2|1|2
+c1_PRR11||6	c5||8	3|1|3
+c1_PRR11||6	Anc4||8	3|1|3
+c1_PRR11||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_PRR11||6	c2_Exp0||6	0.207351|2
+|- cellmarkerVspacer1|Spacer
+c1_PRR11||6	c4_Exp0||6	0.10048|2
+|- cellmarkerVspacer2|Spacer
+c1_PRR11||6	c3_Exp0||6	0.16402|2
+|- cellmarkerVspacer3|Spacer
+c1_PRR11||6	c1_Exp0||6	0.535427|2
+|- cellmarkerVspacer6|Spacer
+c1_PRR11||6	c5_Exp0||6	1.82938|2
+|- cellmarkerVspacer7|Spacer
+c1_CDCA3||6	c2||8	1|1|1
+c1_CDCA3||6	c4||8	1|1|1
+c1_CDCA3||6	c3||8	1|1|1
+c1_CDCA3||6	Anc3||8	1|1|1
+c1_CDCA3||6	Anc2||8	1|1|1
+c1_CDCA3||6	c1||8	2|1|2
+c1_CDCA3||6	c5||8	3|1|3
+c1_CDCA3||6	Anc4||8	3|1|3
+c1_CDCA3||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_CDCA3||6	c2_Exp0||6	0.152779|2
+|- cellmarkerVspacer1|Spacer
+c1_CDCA3||6	c4_Exp0||6	0.022366|2
+|- cellmarkerVspacer2|Spacer
+c1_CDCA3||6	c3_Exp0||6	0.188574|2
+|- cellmarkerVspacer3|Spacer
+c1_CDCA3||6	c1_Exp0||6	0.466569|2
+|- cellmarkerVspacer6|Spacer
+c1_CDCA3||6	c5_Exp0||6	2.30206|2
+|- cellmarkerVspacer7|Spacer
+c1_FIGNL1||6	c2||8	1|1|1
+c1_FIGNL1||6	c4||8	1|1|1
+c1_FIGNL1||6	c3||8	1|1|1
+c1_FIGNL1||6	Anc3||8	1|1|1
+c1_FIGNL1||6	Anc2||8	1|1|1
+c1_FIGNL1||6	c1||8	2|1|2
+c1_FIGNL1||6	c5||8	3|1|3
+c1_FIGNL1||6	Anc4||8	3|1|3
+c1_FIGNL1||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_FIGNL1||6	c2_Exp0||6	0.186301|2
+|- cellmarkerVspacer1|Spacer
+c1_FIGNL1||6	c4_Exp0||6	0.168204|2
+|- cellmarkerVspacer2|Spacer
+c1_FIGNL1||6	c3_Exp0||6	0.197797|2
+|- cellmarkerVspacer3|Spacer
+c1_FIGNL1||6	c1_Exp0||6	0.48422|2
+|- cellmarkerVspacer6|Spacer
+c1_FIGNL1||6	c5_Exp0||6	1.46667|2
+|- cellmarkerVspacer7|Spacer
+c1_ZNF732||6	c2||8	1|1|1
+c1_ZNF732||6	c4||8	1|1|1
+c1_ZNF732||6	c3||8	1|1|1
+c1_ZNF732||6	Anc3||8	1|1|1
+c1_ZNF732||6	Anc2||8	1|1|1
+c1_ZNF732||6	c1||8	2|1|2
+c1_ZNF732||6	c5||8	3|1|3
+c1_ZNF732||6	Anc4||8	3|1|3
+c1_ZNF732||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_ZNF732||6	c2_Exp0||6	0|2
+|- cellmarkerVspacer1|Spacer
+c1_ZNF732||6	c4_Exp0||6	0|2
+|- cellmarkerVspacer2|Spacer
+c1_ZNF732||6	c3_Exp0||6	0|2
+|- cellmarkerVspacer3|Spacer
+c1_ZNF732||6	c1_Exp0||6	0.633334|2
+|- cellmarkerVspacer6|Spacer
+c1_ZNF732||6	c5_Exp0||6	1.4633|2
+|- cellmarkerVspacer7|Spacer
+c1_ZNF724||6	c2||8	1|1|1
+c1_ZNF724||6	c4||8	1|1|1
+c1_ZNF724||6	c3||8	1|1|1
+c1_ZNF724||6	Anc3||8	1|1|1
+c1_ZNF724||6	Anc2||8	1|1|1
+c1_ZNF724||6	c1||8	2|1|2
+c1_ZNF724||6	c5||8	3|1|3
+c1_ZNF724||6	Anc4||8	3|1|3
+c1_ZNF724||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_ZNF724||6	c2_Exp0||6	0.187321|2
+|- cellmarkerVspacer1|Spacer
+c1_ZNF724||6	c4_Exp0||6	0.138325|2
+|- cellmarkerVspacer2|Spacer
+c1_ZNF724||6	c3_Exp0||6	0.237225|2
+|- cellmarkerVspacer3|Spacer
+c1_ZNF724||6	c1_Exp0||6	0.560133|2
+|- cellmarkerVspacer6|Spacer
+c1_ZNF724||6	c5_Exp0||6	1.37795|2
+|- cellmarkerVspacer7|Spacer
+c1_FAM83D||6	c2||8	1|1|1
+c1_FAM83D||6	c4||8	1|1|1
+c1_FAM83D||6	c3||8	1|1|1
+c1_FAM83D||6	Anc3||8	1|1|1
+c1_FAM83D||6	Anc2||8	1|1|1
+c1_FAM83D||6	c1||8	2|1|2
+c1_FAM83D||6	c5||8	3|1|3
+c1_FAM83D||6	Anc4||8	3|1|3
+c1_FAM83D||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_FAM83D||6	c2_Exp0||6	0.066013|2
+|- cellmarkerVspacer1|Spacer
+c1_FAM83D||6	c4_Exp0||6	0|2
+|- cellmarkerVspacer2|Spacer
+c1_FAM83D||6	c3_Exp0||6	0.054431|2
+|- cellmarkerVspacer3|Spacer
+c1_FAM83D||6	c1_Exp0||6	0.581681|2
+|- cellmarkerVspacer6|Spacer
+c1_FAM83D||6	c5_Exp0||6	1.843|2
+|- cellmarkerVspacer7|Spacer
+c1_PARPBP||6	c2||8	1|1|1
+c1_PARPBP||6	c4||8	1|1|1
+c1_PARPBP||6	c3||8	1|1|1
+c1_PARPBP||6	Anc3||8	1|1|1
+c1_PARPBP||6	Anc2||8	1|1|1
+c1_PARPBP||6	c1||8	2|1|2
+c1_PARPBP||6	c5||8	3|1|3
+c1_PARPBP||6	Anc4||8	3|1|3
+c1_PARPBP||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_PARPBP||6	c2_Exp0||6	0.242789|2
+|- cellmarkerVspacer1|Spacer
+c1_PARPBP||6	c4_Exp0||6	0.06188|2
+|- cellmarkerVspacer2|Spacer
+c1_PARPBP||6	c3_Exp0||6	0.117104|2
+|- cellmarkerVspacer3|Spacer
+c1_PARPBP||6	c1_Exp0||6	0.662647|2
+|- cellmarkerVspacer6|Spacer
+c1_PARPBP||6	c5_Exp0||6	1.65282|2
+|- cellmarkerVspacer7|Spacer
+c1_C5orf34||6	c2||8	1|1|1
+c1_C5orf34||6	c4||8	1|1|1
+c1_C5orf34||6	c3||8	1|1|1
+c1_C5orf34||6	Anc3||8	1|1|1
+c1_C5orf34||6	Anc2||8	1|1|1
+c1_C5orf34||6	c1||8	2|1|2
+c1_C5orf34||6	c5||8	3|1|3
+c1_C5orf34||6	Anc4||8	3|1|3
+c1_C5orf34||6	Anc1||8	3|1|3
+|- MyVspacer1|Spacer
+c1_C5orf34||6	c2_Exp0||6	0.179777|2
+|- cellmarkerVspacer1|Spacer
+c1_C5orf34||6	c4_Exp0||6	0.071607|2
+|- cellmarkerVspacer2|Spacer
+c1_C5orf34||6	c3_Exp0||6	0.198885|2
+|- cellmarkerVspacer3|Spacer
+c1_C5orf34||6	c1_Exp0||6	0.553748|2
+|- cellmarkerVspacer6|Spacer
+c1_C5orf34||6	c5_Exp0||6	1.32329|2
+|- cellmarkerVspacer7|Spacer
