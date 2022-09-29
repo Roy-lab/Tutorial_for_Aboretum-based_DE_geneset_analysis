@@ -15,7 +15,7 @@ A tutorial which includes Arboretum &amp; findTransitionGenesets with an example
 
 ### \[Step 0\] About this tutorial
 
-This tutorial explains how to run the ***Arboretum*** and ***findTransitionGeneset***. Arboretum is a multi-task clustering framework which uses hierarchical relationship of samples simultaneously while grouping the genes into a finite number of expression states. In this tutorial, we will do the **clustering of genes** based on the **pseudo-bulk expression** of each dataset, i.e. average values of gene expressions within each dataset (cell cluster, in single cell setting). Once we have defined these **gene expression states** for all cell clusters, we can identify genes with interesting patterns of expression on the hierarchy and group the genes based on the similarity of their patterns to identify the **differential expressing (DE) genesets**. 
+This tutorial explains how to run the ***Arboretum*** and ***findTransitionGeneset***. Arboretum is a multi-task clustering framework which uses hierarchical relationship of samples simultaneously while grouping the genes into a finite number of expression states. In this tutorial, we will do the **clustering of genes** based on the **pseudo-bulk expression** of each dataset, i.e. average values of gene expressions within each dataset (cell cluster, in single cell setting). Once we have defined these **gene expression states** for all datasets, we can identify genes with interesting patterns of expression on the hierarchy and group the genes based on the similarity of their patterns to identify the **differential expressing (DE) genesets**. 
 
 `input_files` folder contains tutorial dataset which consists of following files :
 | Dataset | Description| File name | 
@@ -69,6 +69,8 @@ To deal with a tree easier, especially for a complex tree with many leaves, we c
 - USAGE: reformatSpeciesTree [newick_tree.txt]
 ./code/reformatSpeciesTree input_files/newick_tree.txt > arb_input/tree.txt
 ```
+
+**Result files:**
 `input_files/newick_tree.txt` shows the newick tree of relationship among 5 sampples in this tutorial. The output `arb_input/tree.txt` is a formatted tree for the Arboretum.
 
 ---
@@ -88,7 +90,10 @@ c5
 ```
 cut -f1 arb_input/input_tree.txt |grep -v Anc > arb_input/orders.txt
 ```
-This script used the tree file prepared in the previous step. `arb_input/orders.txt` is the order file of our 5 samples example dataset, an input file of the Arboretum.
+This script used the tree file prepared in the previous step. 
+
+**Result files:**
+`arb_input/orders.txt` is the order file of our 5 samples example dataset, an input file of the Arboretum.
 
 ---
 
@@ -108,7 +113,10 @@ Note that the order of dataset-specific geneID should be same to the order file 
 - USAGE: generating_OGID.sh [orders.txt] [allgenenames.txt]
 sh script/generating_OGID.sh arb_input/orders.txt input_files/allgenenames.txt > arb_input/OGID.txt
 ```
-This script generates OGID based on the order of genes in "allgenenames.txt" file and shapes the gene IDs into "dataset#_geneID" as well as ordering it matched to the order file. The output `arb_input/OGID.txt` is an input file of the Arboretum.
+This script generates OGID based on the order of genes in "allgenenames.txt" file and shapes the gene IDs into "dataset#_geneID" as well as ordering it matched to the order file.
+
+**Result files:**
+The output `arb_input/OGID.txt` is an input file of the Arboretum.
 
 ---
 
@@ -132,8 +140,10 @@ perl script/generating_meanvals.pl input_files/c2_matrix.txt c2
 mv c2_meanval.txt arb_input/
 ... (Do tihs for all datset matrices.)
 ```
-`arb_input/c#_meanval.txt` files are the values used as the source values for the Arboretum clustering.
-- **Note**: The script expects the matrix text file as a tab-delimited [genes x cells] matrix WITH row and column headers. If the user's dataset has given as [cells x genes], one can transpose it by using "script/transpose_matrix.pl" like:
+
+**Result files:** `arb_input/c#_meanval.txt` files are the values used as the source values for the Arboretum clustering.
+
+**Transposing of the data matrix:** The script expects the matrix text file as a tab-delimited [genes x cells] matrix WITH row and column headers. If the user's dataset has given as [cells x genes], one can transpose it by using "script/transpose_matrix.pl" like:
 ```
 - USAGE: transpose_matrix.pl [(tab-delimited) matrix.txt]
 perl script/transpose_matrix.pl c1_matrix.txt > c1_matrix_transposed.txt
@@ -159,20 +169,28 @@ Wrapper script `step1_run_GMM_and_prep_config.sh` is written to perform the init
 sh step1_run_GMM_and_prep_config.sh 3 arb_input/orders.txt 5
 ```
 
-Result folder `arb_input/merged_gmm_k#/` contains the dataset-specific cluster initialization cluster assignment files. `arb_input/config.k#.txt` is the config file which is an input of Arboretum.
+**Result files:** `arb_input/merged_gmm_k#/` contains the dataset-specific cluster initialization cluster assignment files. `arb_input/config.k#.txt` is the config file which is an input of Arboretum.
 
-- **Note:** **The number of clusters (k) is usually matched to the k number of following Arboretum clustering**, e.g. if we decided to use k=5 for the initialization, Arboretum should be also performed with k=5.
+**About selecting numbers of the clusters (k):** The k number is usually matched to the k number of following Arboretum clustering, e.g. if we decided to use k=5 for the initialization, Arboretum should be also performed with k=5.
 
 ---
 
 ### \[Step 6\] Run Arboretum
 
+Arboretum identifies the expression states of genes which could be vary across different datasets. This states are driven by the expression amount of genes, which means higher number of cluster ID corresponds to the higher expression of the gene. **The increase of the number of states (i.e. number of clusters = k number) enables more precise patterning (e.g. 3 level differences in k=3 while 5-level differences in k=5), but also increases the complexity of the results as well.** 
+
+Wrapper script `step2_run_arboretum.sh` is written to perform the Arboretum more easily by providing the proper input files. However, there are bunch of other parameters for the adjusted run of Arboretum. For the detailed usages of the parameters, please refer to the original [Arboretum github page](https://github.com/Roy-lab/Arboretum2.0). 
 
 **Running command:**
 ```
+- USAGE: step2_run_arboretum.sh [#_cluster] [order.txt] [OGID.txt] [tree.txt] [config.txt] ["representative_dataset_name"] [output_folder_name]
 sh step2_run_arboretum.sh 3 arb_input/orders.txt arb_input/OGID.txt arb_input/input_tree.txt arb_input/config.txt c1 arb_output/
 ```
-For the detailed meaning of parameters, please refer to the original [Arboretum github page](https://github.com/Roy-lab/Arboretum2.0). 
+
+**Result files:** `arb_output/` folder contains all the results generated by the Arboretum run. Among the result file, `allspecies_clusterassign_lca_brk.txt` is the most summarized result table, which is a tab-delimited text file. The rows are gene IDs of the "representative_dataset_name" which was specified by user
+and columns are all nodes (leaves and branches) in the tree. The table is sorted by the cluster assignment of Ancestor1 (root ancestor of the tree; positioned at the right-most column of the table). Dummy lines are the separators of different cluster assignments between two group of Ancestor1 clusters.
+
+
 
 ---
 
