@@ -6,7 +6,7 @@ A tutorial which includes Arboretum &amp; findTransitionGenesets with an example
 - [2. Prepare input order](#step-2-prepare-input-order-file)
 - [3. Prepare input OGID](#step-3-prepare-input-OGID-file)
 - [4. Prepare input value](#step-4-prepare-input-value-files)
-- [5. Run initialization clustering / prepare input config](#step-5-run-initialization-clutering-and-prepare-config-file)
+- [5. Run initialization clustering / prepare input config](#step-5-run-initialization-clustering-and-prepare-config-file)
 - [6. Run Arboretum](#step-6-run-arboretum)
 - [7. Run findTransitioningGenesets](#step-7-run-findTransitionGenesets)
 - [8. Result visualization](#step-8-visualize-the-results)
@@ -132,7 +132,7 @@ perl script/generating_meanvals.pl input_files/c2_matrix.txt c2
 mv c2_meanval.txt arb_input/
 ... (Do tihs for all datset matrices.)
 ```
-"arb_input/c#_meanval.txt" files are the values used as the source values for the Arboretum clustering.
+`arb_input/c#_meanval.txt` files are the values used as the source values for the Arboretum clustering.
 - **Note**: The script expects the matrix text file as a tab-delimited [genes x cells] matrix WITH row and column headers. If the user's dataset has given as [cells x genes], one can transpose it by using "script/transpose_matrix.pl" like:
 ```
 - USAGE: transpose_matrix.pl [(tab-delimited) matrix.txt]
@@ -141,14 +141,27 @@ perl script/transpose_matrix.pl c1_matrix.txt > c1_matrix_transposed.txt
 
 ---
 
-### \[Step 5\] Run initialization clutering and prepare config file
+### \[Step 5\] Run initialization clustering and prepare config file
 
+Identification of initializaiton clusters of genes is the first step of Arboretum analysis. This clustering is usually done by performing Gaussian Mixture Model (GMM) and this clustering assignments are assigned to the genes equally across all the datasets. Once after the initial clustering results are prepared, a speficific file for the configuration should be written for an input of Arboretum. The config file is a tab-delimited text file which has 3 columns:
+```
+DATASET_NAME (TAB) PATH/TO/INIT_CLUSTER.txt (TAB) PATH/TO/INPUT_VALUES.txt
+```
+
+Wrapper script `step1_run_GMM_and_prep_config.sh` is written to perform the initialization GMM smoothly as well as to turn the results as Arboretum input form automatically. Jobs done by this script are:
+- Performing GMM clustering based on the merged matrix of input values in [Step 4](#step-4-prepare-input-value-files)
+- Formatting the clustering result as dataset-sepcific initial cluster files
+- Writing the config file automatically
 
 **Running command:**
 ```
+- USAGE: step1_run_GMM_and_prep_config.sh [#_cluster] [order.txt] [#_samples]
 sh step1_run_GMM_and_prep_config.sh 3 arb_input/orders.txt 5
 ```
 
+Result folder `arb_input/merged_gmm_k#/` contains the dataset-specific cluster initialization cluster assignment files. `arb_input/config.k#.txt` is the config file which is an input of Arboretum.
+
+- **Note:** **The number of clusters (k) is usually matched to the k number of following Arboretum clustering**, e.g. if we decided to use k=5 for the initialization, Arboretum should be also performed with k=5.
 
 ---
 
@@ -159,6 +172,7 @@ sh step1_run_GMM_and_prep_config.sh 3 arb_input/orders.txt 5
 ```
 sh step2_run_arboretum.sh 3 arb_input/orders.txt arb_input/OGID.txt arb_input/input_tree.txt arb_input/config.txt c1 arb_output/
 ```
+For the detailed meaning of parameters, please refer to the original [Arboretum github page](https://github.com/Roy-lab/Arboretum2.0). 
 
 ---
 
