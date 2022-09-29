@@ -7,7 +7,7 @@ OGID=$3		# OGID file location
 TREE=$4		# tree file location
 CONFIG=$5	# config file location
 BEST=$6		# name of representative sample
-OUTDIR=arb_output/
+OUTDIR=$7	# output directory name, e.g. arb_output/
 
 P=0.8		# transitioning probability (default is 0.8)
 CODE=code/Arboretum/arboretum
