@@ -66,7 +66,7 @@ To deal with a tree easier, especially for a complex tree with many leaves, we c
 
 **Running command:**
 ```
-USAGE: reformatSpeciesTree [newick_tree.txt]
+- USAGE: reformatSpeciesTree [newick_tree.txt]
 ./code/reformatSpeciesTree input_files/newick_tree.txt > arb_input/tree.txt
 ```
 `input_files/newick_tree.txt` shows the newick tree of relationship among 5 sampples in this tutorial. The output `arb_input/tree.txt` is a formatted tree for the Arboretum.
@@ -105,7 +105,7 @@ Note that the order of dataset-specific geneID should be same to the order file 
 
 **Running command:**
 ```
-USAGE: generating_OGID.sh [orders.txt] [allgenenames.txt]
+- USAGE: generating_OGID.sh [orders.txt] [allgenenames.txt]
 sh script/generating_OGID.sh arb_input/orders.txt input_files/allgenenames.txt > arb_input/OGID.txt
 ```
 This script generates OGID based on the order of genes in "allgenenames.txt" file and shapes the gene IDs into "dataset#_geneID" as well as ordering it matched to the order file. The output `arb_input/OGID.txt` is an input file of the Arboretum.
@@ -125,7 +125,7 @@ c1_A2M  (TAB) 0.899409
 
 **Running command:**
 ```
-USAGE: generating_meanvals.pl [genes-by-cells_matrix.txt] ["dataset-name"]
+- USAGE: generating_meanvals.pl [genes-by-cells_matrix.txt] ["dataset-name"]
 perl script/generating_meanvals.pl input_files/c1_matrix.txt c1
 mv c1_meanval.txt arb_input/
 perl script/generating_meanvals.pl input_files/c2_matrix.txt c2
@@ -135,7 +135,7 @@ mv c2_meanval.txt arb_input/
 "arb_input/c#_meanval.txt" files are the values used as the source values for the Arboretum clustering.
 - **Note**: The script expects the matrix text file as a tab-delimited [genes x cells] matrix WITH row and column headers. If the user's dataset has given as [cells x genes], one can transpose it by using "script/transpose_matrix.pl" like:
 ```
-USAGE: transpose_matrix.pl [(tab-delimited) matrix.txt]
+- USAGE: transpose_matrix.pl [(tab-delimited) matrix.txt]
 perl script/transpose_matrix.pl c1_matrix.txt > c1_matrix_transposed.txt
 ```
 
@@ -143,6 +143,8 @@ perl script/transpose_matrix.pl c1_matrix.txt > c1_matrix_transposed.txt
 
 ### \[Step 5\] Run initialization clutering and prepare config file
 
+
+**Running command:**
 ```
 sh step1_run_GMM_and_prep_config.sh 3 arb_input/orders.txt 5
 ```
@@ -152,6 +154,8 @@ sh step1_run_GMM_and_prep_config.sh 3 arb_input/orders.txt 5
 
 ### \[Step 6\] Run Arboretum
 
+
+**Running command:**
 ```
 sh step2_run_arboretum.sh 3 arb_input/orders.txt arb_input/OGID.txt arb_input/input_tree.txt arb_input/config.txt c1 arb_output/
 ```
@@ -160,6 +164,8 @@ sh step2_run_arboretum.sh 3 arb_input/orders.txt arb_input/OGID.txt arb_input/in
 
 ### \[Step 7\] Run findTransitionGenesets
 
+
+**Running command:**
 ```
 sh step3_run_findTransitionGenesets.sh arb_output/ arb_input/orders.txt arb_input/OGID.txt c1 transition_genesets_output
 
@@ -169,6 +175,8 @@ sh step3_run_findTransitionGenesets.sh arb_output/ arb_input/orders.txt arb_inpu
 
 ### \[Step 8\] Visualize the results
 
+
+**Running command:**
 ```
 sh script/draw_heatmap.sh transition_genesets_output/ordered_clusterset_means.txt 3 2
 sh script/draw_heatmap.sh transition_genesets_output/clusterset101.txt 3 2
