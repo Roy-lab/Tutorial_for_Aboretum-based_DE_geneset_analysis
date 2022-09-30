@@ -1,5 +1,5 @@
 theme: jekyll-theme-minimal
 title: Tutorial_for_Aboretum-based_DE_geneset_analysis
-description: 
+description: A tutorial which includes Arboretum & findTransitionGenesets with an example dataset.
 logo: 
 show_downloads: true
