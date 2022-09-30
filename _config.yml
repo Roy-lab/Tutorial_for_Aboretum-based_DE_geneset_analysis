@@ -1,0 +1,5 @@
+theme: jekyll-theme-minimal
+title: MUSCARI
+description: Multi-task Spectral Clustering AlgoRIthm
+logo: docs/assets/muscari_cartoon.png
+show_downloads: true
