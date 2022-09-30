@@ -32,6 +32,7 @@ This tutorial explains how to run the ***Arboretum*** and ***findTransitionGenes
 - **Note**: the codes and scripts of this tutorial were fully tested and checked as working with the format above. So please firslty prepare your data as like above if you want to work with your own data.
 
 `code` folder contains the main programs of this tutorial, which could be also downloaded from its own site:
+
 | Program | Description | Original site |
 | :---    | :---  | :--- |
 | learnMoE | Initialization GMM clustering | https://github.com/Roy-lab/learnMoE |
@@ -45,6 +46,7 @@ This tutorial explains how to run the ***Arboretum*** and ***findTransitionGenes
 `script` folder contains several shell and PERL scripts which is used for the specific formatting of the data while running the wrapper scripts.
 
 The key steps of clustering are performed by the following wrapper scripts:
+
 | Wrapper script name | Running program | Output |
 | :---    | :---  | :--- |
 | step1_run_GMM_and_prep_config.sh | learnMoE | arb_input/merged_gmm_k#/, arb_input/config_k#.txt |
