@@ -4,7 +4,7 @@ A tutorial which includes Arboretum &amp; findTransitionGenesets with an example
 - [0. About this tutorial](#step-0-about-this-tutorial)
 - [1. Prepare input tree](#step-1-prepare-input-tree)
 - [2. Prepare input order](#step-2-prepare-input-order-file)
-- [3. Prepare input OGID](#step-3-Prepare input OGID file)
+- [3. Prepare input OGID](#step-3-prepare-input-OGID-file)
 - [4. Prepare input value](#step-4-prepare-input-value-files)
 - [5. Run initialization clustering / prepare input config](#step-5-run-initialization-clustering-and-prepare-config-file)
 - [6. Run Arboretum](#step-6-run-arboretum)
