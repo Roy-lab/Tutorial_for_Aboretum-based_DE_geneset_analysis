@@ -18,6 +18,7 @@ A tutorial which includes Arboretum &amp; findTransitionGenesets with an example
 This tutorial explains how to run the ***Arboretum*** and ***findTransitionGeneset***. Arboretum is a multi-task clustering framework which uses hierarchical relationship of samples simultaneously while grouping the genes into a finite number of expression states. In this tutorial, we will do the **clustering of genes** based on the **pseudo-bulk expression** of each dataset, i.e. average values of gene expressions within each dataset (cell cluster, in single cell setting). Once we have defined these **gene expression states** for all datasets, we can identify genes with interesting patterns of expression on the hierarchy and group the genes based on the similarity of their patterns to identify the **differential expressing (DE) genesets**. 
 
 `input_files` folder contains tutorial dataset which consists of following files :
+
 | Dataset | Description| File name | 
 | :---    | :---  | :--- |
 | c1_matrix | 155 cells x 20840 genes, with row & column headers | input_files/c1_matrix.txt |
@@ -138,7 +139,7 @@ perl script/generating_meanvals.pl input_files/c1_matrix.txt c1
 mv c1_meanval.txt arb_input/
 perl script/generating_meanvals.pl input_files/c2_matrix.txt c2
 mv c2_meanval.txt arb_input/
-... (Do tihs for all datset matrices.)
+... (Do this for all datset matrices.)
 ```
 
 **Result files:** `arb_input/c#_meanval.txt` files are the values used as the source values for the Arboretum clustering.
