@@ -4,7 +4,7 @@ A tutorial which includes Arboretum &amp; findTransitionGenesets with an example
 - [0. About this tutorial](#step-0-about-this-tutorial)
 - [1. Prepare input tree](#step-1-prepare-input-tree)
 - [2. Prepare input order](#step-2-prepare-input-order-file)
-- [3. Prepare input OGID](#step-3-prepare-input-OGID-file)
+- [3. Prepare input OGID](#step-3-Prepare input OGID file)
 - [4. Prepare input value](#step-4-prepare-input-value-files)
 - [5. Run initialization clustering / prepare input config](#step-5-run-initialization-clustering-and-prepare-config-file)
 - [6. Run Arboretum](#step-6-run-arboretum)
@@ -70,6 +70,7 @@ To deal with a tree easier, especially for a complex tree with many leaves, we c
 **Running command:**
 ```
 - USAGE: reformatSpeciesTree [newick_tree.txt]
+
 ./code/reformatSpeciesTree input_files/newick_tree.txt > arb_input/tree.txt
 ```
 
@@ -114,6 +115,7 @@ Note that the order of dataset-specific geneID should be same to the order file 
 **Running command:**
 ```
 - USAGE: generating_OGID.sh [orders.txt] [allgenenames.txt]
+
 sh script/generating_OGID.sh arb_input/orders.txt input_files/allgenenames.txt > arb_input/OGID.txt
 ```
 This script generates OGID based on the order of genes in "allgenenames.txt" file and shapes the gene IDs into "dataset#_geneID" as well as ordering it matched to the order file.
@@ -137,6 +139,7 @@ c1_A2M  (TAB) 0.899409
 **Running command:**
 ```
 - USAGE: generating_meanvals.pl [genes-by-cells_matrix.txt] ["dataset-name"]
+
 perl script/generating_meanvals.pl input_files/c1_matrix.txt c1
 mv c1_meanval.txt arb_input/
 perl script/generating_meanvals.pl input_files/c2_matrix.txt c2
@@ -169,6 +172,7 @@ Wrapper script `step1_run_GMM_and_prep_config.sh` is written to perform the init
 **Running command:**
 ```
 - USAGE: step1_run_GMM_and_prep_config.sh [#_cluster] [order.txt] [#_samples]
+
 sh step1_run_GMM_and_prep_config.sh 3 arb_input/orders.txt 5
 ```
 
@@ -187,6 +191,7 @@ Wrapper script `step2_run_arboretum.sh` is written to perform the Arboretum more
 **Running command:**
 ```
 - USAGE: step2_run_arboretum.sh [#_cluster] [order.txt] [OGID.txt] [tree.txt] [config.txt] ["representative_dataset_name"] [output_folder_name]
+
 sh step2_run_arboretum.sh 3 arb_input/orders.txt arb_input/OGID.txt arb_input/input_tree.txt arb_input/config.txt c1 arb_output/
 ```
 - **Note:** "representative_dataset_name" is for the specification of a specific dataset name for printing out the result text with the gene ID of that dataset. You can do not mind this much and just use any dataset name because or OGIDs cannot have "missing" gene IDs, unlike the multi-species analysis cases.
