@@ -127,7 +127,7 @@ The output `arb_input/OGID.txt` is an input file of the Arboretum.
 
 ### \[Step 4\] Prepare input value files
 
-We are using pseudo-bulk expression vector of genes per samples, which is the average values of gene expressions within each dataset matrix so that each dataset has 1 vector values. The format of value file is a tab-delimited text file of 2 columns, the 1st column as "dataset_geneID" and the 2nd column is the mean expression values of all cells within the dataset. 
+We are using pseudo-bulk expression vector of genes per samples, which is the average values of gene expressions within each dataset matrix so that each dataset has 1 vector values. The format of the file is a tab-delimited text file of 2 columns, the 1st column as "dataset_geneID" and the 2nd column is the mean expression values of all cells within the dataset. 
 ```
 c1_A1BG	(TAB) 0.673579
 c1_A1BG-AS1 (TAB) 0.246118
@@ -184,7 +184,7 @@ sh step1_run_GMM_and_prep_config.sh 3 arb_input/orders.txt 5
 
 ### \[Step 6\] Run Arboretum
 
-Arboretum identifies the expression states of genes which could be vary across different datasets. This states are driven by the expression amount of genes, which means higher number of cluster ID corresponds to the higher expression of the gene. **The increase of the number of states (i.e. number of clusters = k number) enables more precise patterning (e.g. 3 level differences in k=3 while 5-level differences in k=5), but also increases the complexity of the results as well.** 
+Arboretum identifies the expression states of genes which could be vary across different datasets. These states are driven by the expression amount of genes, which means higher number of cluster ID corresponds to the higher expression of the gene. **The increase of the number of states (i.e. number of clusters = k number) enables more precise patterning (e.g. 3 level differences in k=3 while 5-level differences in k=5), but also increases the complexity of the results as well.** 
 
 Wrapper script `step2_run_arboretum.sh` is written to perform the Arboretum more easily by providing the proper input files. However, there are bunch of other parameters for the adjusted run of Arboretum. For the detailed usages of the parameters, please refer to the original [Arboretum github page](https://github.com/Roy-lab/Arboretum2.0). 
 
@@ -207,20 +207,51 @@ and columns are all nodes (leaves and branches) in the tree. The table is sorted
 
 ### \[Step 7\] Run findTransitionGenesets
 
+Arboretum stratifies the semi-continuous expression levels of genes of the datasets into finite numbers of expression states. This results in a gene's profile of expression states per datasets. The assessment based on these profiles is beneficial because it can catch the nuanced expressional changes which is not allowed in the DE analysis based on pairwise comparisons in usual.
+
+We are interesting to identify the groups of genes that are sharing a common expression states profile because those gene sets may be working together as a pathway and they will generate a specific pattern across different datasets or biological contexts. To identify this type of genesets systematically, we do a hierarchical clustering based on the expression state profiles.
+
+Wrapper script `step3_run_findTransitionGenesets.sh` is developed for performing the hierarchical clustering of profiles. For the detailed usage of the program `findTransitionGenesets`, please refer to the [clustering code github page](https://github.com/Roy-lab/clade-specific_gene_sets/tree/v2/de-novo_clustering). 
 
 **Running command:**
 ```
-sh step3_run_findTransitionGenesets.sh arb_output/ arb_input/orders.txt arb_input/OGID.txt c1 transition_genesets_output
+- USAGE: step3_run_findTransitionGenesets.sh [Arboretum_output_folder] [order.txt] [OGID.txt] ["representative_dataset_name"] [output_folder_name]
 
+sh step3_run_findTransitionGenesets.sh arb_output/ arb_input/orders.txt arb_input/OGID.txt c1 transition_genesets_output
 ```
+
+Practically, the jobs which are done by this wrapper script are:
+- Reordering the cluster IDs given by Arboretum into expression amount-related orders
+- Re-format the result table of Arboretum `allspecies_clusterassign_lca_brk.txt` to the input form of the hierarchical clustering (`allcelltypes_clusterassign_brk.txt`)
+- Run the hierarchical clustering with given input parameters
+
+**Result files:**
+- **all_assign.txt** : a formatted result file for plotting the all genes (rows) with expression state profiles and average expression values. The file is written as the input format for [Heatmap.awk](http://compbio.mit.edu/pouyak/software/Heatmap.awk).
+- **ordered_clusterset_means.txt** : a [Heatmap.awk](http://compbio.mit.edu/pouyak/software/Heatmap.awk)-formatted result file for plotting the pattern of identified clustersets as rows.
+- **clusterset##.txt** : a [Heatmap.awk](http://compbio.mit.edu/pouyak/software/Heatmap.awk)-formatted result files for plotting cluster-specific heatmaps with genes within the cluster as rows.
+- **all_genes_clusterassignment_matrix.txt** : a text table of the hierarchical clustering results in plain text. Rows are genes and columns are nodes of the relationship tree. Each clusters are delimited by "Dummy" rows which are starting with "Dummy###".
+- **ordered_mean_clusterassign_matrix.txt** : a text table of the hierarchical clustering results in plain text but the rows are the clusterset IDs.
+- **all_genesets.txt** : a text file of the hierarchical clustering result in different format. The 2 columns of this files are "cluster ID" and "lists of genes" (delimited as #).
 
 ---
 
 ### \[Step 8\] Visualize the results
 
+[Step 7](#step-7-run-findTransitionGenesets)'s following result files are specifically formatted for the heatmap plotting using the script [Heatmap.awk](http://compbio.mit.edu/pouyak/software/Heatmap.awk).
+- `all_assign.txt`
+- `ordered_clusterset_means.txt`
+- `clusterset##.txt` 
 
+Following script will draw the heatmap and save as `*.svg` files based on the default color scheme.
+- `all_assign.svg`
+- `ordered_clusterset_means.svg`
+- `clusterset##.svg` 
+- 
 **Running command:**
 ```
+- USAGE: draw_heatmap.sh [formatted_input_file] [max_value_of_cluster] [max_value_for_depicting_expreesions]
+
 sh script/draw_heatmap.sh transition_genesets_output/ordered_clusterset_means.txt 3 2
 sh script/draw_heatmap.sh transition_genesets_output/clusterset101.txt 3 2
 ```
+
