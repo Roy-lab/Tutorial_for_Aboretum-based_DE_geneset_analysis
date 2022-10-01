@@ -242,10 +242,12 @@ Practically, the jobs which are done by this wrapper script are:
 - `ordered_clusterset_means.txt`
 - `clusterset##.txt` 
 
+
 Following script will draw the heatmap and save as `*.svg` files based on the default color scheme. Please check the svg files in `transition_genesets_output/` folder to check how they look.
 - `all_assign.svg`
 - `ordered_clusterset_means.svg`
 - `clusterset##.svg` 
+
 
 **Running command:**
 ```
