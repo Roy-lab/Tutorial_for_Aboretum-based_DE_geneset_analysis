@@ -1,0 +1,32 @@
+The goal of this set of classes is to take the protein and gene expression levels
+and the physical interaction network and generate data for the Bayes net that I want to
+learn using PNL. We need the following classes:
+
+Interaction
+InteractionManager
+Gene
+Protein
+Framework
+
+Unfortunately, just by sampling genes and protein ids will not work. The result is a disconnected 
+network where the protein protein interactions do not play any role in the rest of the network.
+First, we need to pick a gene node and follow all its paths via pp and pd interactions.
+Then at some point we need to go back and refine our model as to how pp interactions play
+a role in transcription.
+
+Refined design
+---------------
+New classes BioNode and BioNetwork. Gene and Protein nodes will derive from BioNode.
+BioNetwork is made up of a set of BioNodes. It will take the protein-protein and protein-dna
+interactions and create the physical network, with appropriate in and out neighbours.
+The BioNodes have a type field associated so that they may find out, whether their neighbours 
+are proteins or genes and accordingly add a protein-protein interaction edge or a protein-dna
+interaction edge.
+BioNetwork
+- create: This will create the physical network using the protein protein and protein-dna interaction managers
+- getReachability: This will for each BioNode do the reachability analysis
+
+
+BioNode
+- findReachableNodes: This will find the set of reachable nodes using BFS
+- all other functions that were previously associated with the Gene and Protein nodes.

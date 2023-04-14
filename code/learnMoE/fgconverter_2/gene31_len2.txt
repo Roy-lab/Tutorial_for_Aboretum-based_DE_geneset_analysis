@@ -1,0 +1,14 @@
+NodeCnt	10
+ContinuousNodes	0	1	2	3	4	5
+DiscreteNodes	6	7	8	9
+Neighbours	1	2	1	2	1	3	1	3	1	3
+NodeName=G8	NodeID=0	Parents=	Children=1	Values=0,1,2
+NodeName=P8	NodeID=1	Parents=0	Children=7	Values=0,1,2
+NodeName=G35	NodeID=2	Parents=	Children=3	Values=0,1,2
+NodeName=P35	NodeID=3	Parents=2	Children=9	Values=0,1,2
+NodeName=G31	NodeID=4	Parents=	Children=5	Values=0,1,2
+NodeName=P31	NodeID=5	Parents=4	Children=9,7	Values=0,1,2
+NodeName=31-8pp.I	NodeID=6	Parents=	Children=7	Values=0,1
+NodeName=31-8pp.N	NodeID=7	Parents=6,5,1	Children=	Values=0,1
+NodeName=31-35pp.I	NodeID=8	Parents=	Children=9	Values=0,1
+NodeName=31-35pp.N	NodeID=9	Parents=8,5,3	Children=	Values=0,1
