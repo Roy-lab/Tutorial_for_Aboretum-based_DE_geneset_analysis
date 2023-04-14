@@ -4,12 +4,12 @@ set -u
 #####################
 ## USER PARAMETERS ##
 #####################
-NUMSET=$1	# number of total samples
-ORDER_FILE=$2	# order file for arboretum input
-K=$3		# arboretum k number
-SRCDIR=input_files/
-ARBSRCDIR=arb_input/
-CODEDIR=code/learnMoE/
+NUMSET=$1				# number of total samples
+ORDER_FILE=$2			# order file for arboretum input
+K=$3					# arboretum k number
+SRCDIR=input_files/		# PLACE WHERE YOUR INPUT DATA VALUE FILES ARE IN
+ARBSRCDIR=arb_input/	# PLACE WHERE THE ARBORETUM INPUT FILES (MAYBE YOU PREPARED) ARE IN
+CODEDIR=code/init_GMM/
 #####################
 
 OUTNAME=merged_gmm_k${K}	# name of directory for init clusters
@@ -36,7 +36,7 @@ ${CODEDIR}/genData merged_mat${K}.txt 1 ${OUTNAME} ${COLNUM} fgraph 0 none
 echo " - clustering GMM"
 OUTDIR=${OUTNAME}
 mkdir ${OUTDIR}
-${CODEDIR}/clustering/learnMoE_JS -m ${OUTNAME} -o ${OUTDIR} -l ${K} -e random -v 1
+${CODEDIR}/learnMoE -m ${OUTNAME} -o ${OUTDIR} -l ${K} -e random -v 1
 echo ""
 echo " - ${OUTDIR} done"
 rm merged_mat${K}.txt ${OUTNAME}.*
