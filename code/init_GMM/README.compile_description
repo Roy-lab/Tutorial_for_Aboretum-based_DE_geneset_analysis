@@ -1,7 +1,0 @@
-Compiling description
-
-1. cd into fgconverter_2/
-2. make (this will generate a new "genData" if successful)
-3. cd into clustering/
-4. make (this will generate a new "learnMoE" if successful)
-5. copy 2 executable fies (genData and learnMoE) to the code/GMM/ directory
