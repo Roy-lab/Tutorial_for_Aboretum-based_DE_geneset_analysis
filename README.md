@@ -171,9 +171,9 @@ Wrapper script `step1_run_GMM_and_prep_config.sh` is written to perform the init
 
 **Running command:**
 ```
-- USAGE: step1_run_GMM_and_prep_config.sh [#_cluster] [order.txt] [#_samples]
+- USAGE: step1_run_GMM_and_prep_config.sh [#_samples] [order.txt] [#_cluster]
 
-sh step1_run_GMM_and_prep_config.sh 3 arb_input/orders.txt 5
+sh step1_run_GMM_and_prep_config.sh 5 arb_input/orders.txt 3
 ```
 
 **Result files:** `arb_input/merged_gmm_k#/` contains the dataset-specific cluster initialization cluster assignment files. `arb_input/config.k#.txt` is the config file which is an input of Arboretum.
