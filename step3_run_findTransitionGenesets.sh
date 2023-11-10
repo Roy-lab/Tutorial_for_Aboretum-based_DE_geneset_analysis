@@ -14,7 +14,8 @@ CODE_DIR=code/
 #####################
 
 ## STEP1: reorder arboretum cluster ID / generate input format
-${SCRIPT_DIR}/reorder_reformat_arboretum_result.pl ${ARBOUT}/
+#${SCRIPT_DIR}/reorder_reformat_arboretum_result.pl ${ARBOUT}/
+${SCRIPT_DIR}/reorder_reformat_arboretum_result2.pl ${ARBOUT}/ ${ORDER}
 
 
 ## STEP2: run find_transition_genesets
